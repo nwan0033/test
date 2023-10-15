@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Global Sustainable Energy</title>
+  <!-- Import Vega & Vega-Lite (does not have to be from CDN) -->
+  <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
+
+  <!-- Import pure.css -->
+  <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css"
+    integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Google font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+
+  <!-- CSS file -->
+  <link rel="stylesheet" type="text/css" href="css/styles.css" media="all">
+
+  <style>
+    h1 {text-align: center}
+
+    h2 {
+      text-align: center;
+      background-color:rgb(165, 214, 244)
+    }
+
+    body {
+      padding: 30px;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <div class="page">
+
+    <!-- pure grid group -->
+    <div class="pure-g">
+      <div class="pure-u-1-1">
+        <h1>Global Sustainable Energy</h1>
+      </div>
+    </div>
+    <!-- end pure grid group -->
+
+    <!-- pure grid group -->
+    <div class="pure-g">
+      <div class="pure-u-1-1">
+        <h2>
+          Energy Consumption and GDP per capita
+        </h2>
+      </div>
+    </div>
+    <!-- end pure grid group -->
+
+    <!-- pure grid group -->
+    <div class="text-selection" style="display: flex; flex-direction: column; align-items: center;">
+      <div style="display: flex; align-items: flex-start; justify-content: space-between;">
+
+        <div style="width: 70%">
+          <div id="vis1" class="vis-container"></div>
+        </div>
+
+        <div style="width: 35%">
+          <div class="description">
+
+            <p>Sustainable energy is energy derived in such a way that meets the needs of current generations withouth 
+            jeopardizing the ability for future generations to meet their own needs. </p>
+          
+            <p>Looking at the map on the left, it can be observed that a large proportion of energy consumed is consumed over time has been
+            in the more west ends of Europe and Asia. </p>
+          
+            <p>Furthermore, it seems there is a fairly positive relationship between GDP per capita and Energy Consumption per capita with
+            most countries that are consuming high levels of energy simultaneously having the highest GDP per capitas over time.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- end pure grid group -->
+
+    <!-- pure grid group -->
+    <div class="pure-g">
+      <div class="pure-u-1-1">
+        <h2>
+          CO2 Emissions over time
+        </h2>
+      </div>
+    </div>
+    <!-- end pure grid group -->
+
+    <!-- pure grid group -->
+    <div class="pure-g">
+      <div class="pure-u-2-3">
+        <div id="vis2" class="vis-container"></div>
+      </div>
+      <div class="pure-u-1-3">
+        <div class="description description-left">
+
+          <p>CO2 emissions are emissions produced through the burning of fossil fuels and the manufacture of cement. While CO2 emissions
+            are beneficial for the environment to a certain extent, over time significant rises in CO2 emissions have led to increases in
+            global temperatures.
+          </p>
+
+          <p>Looking at the bubble chart on the left, we can see that countries like the US and especially China have produced a concerningly
+            large amount of CO2 emissions over time with China continuing to rise in its contribution. Countries like Germany, India and Japan,
+            even given their large population density per square kilometer, have consistently produced far less CO2 emissions over time.
+          </p>
+
+          <p>However, looking at the line graphs below, we can see that whilst globally, we've made many negative contributions to the
+            environment, we are making positive progress seen by the rapid exponential increase in the use of renewables to produce electricity.
+          </p>
+        </div>
+      </div>
+
+    </div>
+    <!-- end pure grid group -->
+
+    <!-- pure grid group -->
+    <div class="pure-g">
+      <div class="pure-u-1-1">
+        <h2>
+          Mean Electricity Production (TWh) over time
+        </h2>
+      </div>
+    </div>
+    <!-- end pure grid group -->
+
+    <!-- pure grid group -->
+    <div class="pure-g">
+
+      <div class="pure-u-1-3">
+        <div id="vis3" class="vis-container"></div>
+      </div>
+
+    </div>
+    <!-- end pure grid group -->
+
+    <!-- pure grid group -->
+    <div class="pure-g">
+      <div class="pure-u-1-1">
+        <h2>
+          Mean Renewable Electricity Generating Capacity
+        </h2>
+      </div>
+    </div>
+    <!-- end pure grid group -->
+
+    <!-- pure grid group -->
+    <div class="pure-g">
+      <div class="pure-u-2-3">
+        <div id="vis4" class="vis-container"></div>
+      </div>
+      <div class="pure-u-1-3">
+        <div class="description description-left">
+
+          <p>CO2 emissions are emissions produced through the burning of fossil fuels and the manufacture of cement. While CO2 emissions
+            are beneficial for the environment to a certain extent, over time significant rises in CO2 emissions have led to increases in
+            global temperatures.
+          </p>
+
+          <p>Looking at the bubble chart on the left, we can see that countries like the US and especially China have produced a concerningly
+            large amount of CO2 emissions over time with China continuing to rise in its contribution. Countries like Germany, India and Japan,
+            even given their large population density per square kilometer, have consistently produced far less CO2 emissions over time.
+          </p>
+
+          <p>However, looking at the line graphs below, we can see that whilst globally, we've made many negative contributions to the
+            environment, we are making positive progress seen by the rapid exponential increase in the use of renewables to produce electricity.
+          </p>
+        </div>
+      </div>
+
+    </div>
+    <!-- end pure grid group -->
+
+
+
+  </div> <!-- end page -->
+
+  <script type="text/javascript">
+    var specVis1 = "./symbol_map.json";
+    var specVis2 = "./bubble_chart.json";
+    var specVis3 = "./line_chart.json";
+    var specVis4 = "./bar_cart.json";
+
+    vegaEmbed('#vis1', specVis1, { "actions": false });
+
+    vegaEmbed('#vis2', specVis2, { "actions": false }).then(function (result) {
+      // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+
+    vegaEmbed('#vis3', specVis3, { "actions": false }).then(function (result) {
+      // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+
+    vegaEmbed('#vis4', specVis4, { "actions": false }).then(function (result) {
+      // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+
+  </script>
+
+</body>
+
+</html>

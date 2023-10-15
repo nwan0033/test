@@ -1,0 +1,145 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 700,
+    "height": 300,
+    "title": {
+        "text": ""
+    },
+    "data": {
+        "url": "https://raw.githubusercontent.com/nwan0033/data_vis_II/main/global-data-on-sustainable-energy.csv"
+    },
+    "params": [
+        {
+            "name": "Year_Below",
+            "value": 2020,
+            "bind": {
+                "input": "range",
+                "min": 2000,
+                "max": 2020,
+                "step": 1,
+                "name": "Maximum Year: "
+            }
+        }
+    ],
+    "transform": [
+        {
+            "filter": "datum.Year < Year_Below"
+        },
+        {
+            "aggregate": [
+                {
+                    "op": "mean",
+                    "field": "Electricity from fossil fuels (TWh)",
+                    "as": "Mean Electricity from Fossil Fuels"
+                },
+
+                {
+                    "op": "mean",
+                    "field": "Electricity from nuclear (TWh)",
+                    "as": "Mean Electricity from Nuclear Power"
+                },
+
+                {
+                    "op": "mean",
+                    "field": "Electricity from renewables (TWh)",
+                    "as": "Mean Electricity from Renewables"
+                }
+            ],
+            "groupby": [
+                "Year"
+            ]
+        }
+    ],
+
+    "layer": [
+        {
+            "mark": "line",
+            "encoding": {
+
+                "x": {
+                    "field": "Year",
+                    "type": "nominal",
+                    "title": "Year"
+                },
+
+                "y": {
+                    "field": "Mean Electricity from Fossil Fuels",
+                    "title": "Mean Electricity Produced (TWh)",
+                    "type": "quantitative"
+                },
+
+                "tooltip": [
+                    {
+                        "field": "Mean Electricity from Fossil Fuels",
+                        "type": "quantitative",
+                        "format": ".2f"
+                    },
+                    {
+                        "field": "Year",
+                        "type": "nominal"
+                    }
+                ]
+            }
+        },
+
+        {
+            "mark": "line",
+            "encoding": {
+
+                "x": {
+                    "field": "Year",
+                    "type": "nominal",
+                    "title": "Year"
+                },
+
+                "y": {
+                    "field": "Mean Electricity from Nuclear Power",
+                    "title": "",
+                    "type": "quantitative"
+                },
+
+                "tooltip": [
+                    {
+                        "field": "Mean Electricity from Nuclear Power",
+                        "type": "quantitative",
+                        "format": ".2f"
+                    },
+                    {
+                        "field": "Year",
+                        "type": "nominal"
+                    }
+                ]
+            }
+        },
+
+        {
+            "mark": "line",
+            "encoding": {
+
+                "x": {
+                    "field": "Year",
+                    "type": "nominal",
+                    "title": "Year"
+                },
+
+                "y": {
+                    "field": "Mean Electricity from Renewables",
+                    "title": "",
+                    "type": "quantitative"
+                },
+
+                "tooltip": [
+                    {
+                        "field": "Mean Electricity from Renewables",
+                        "type": "quantitative",
+                        "format": ".2f"
+                    },
+                    {
+                        "field": "Year",
+                        "type": "nominal"
+                    }
+                ]
+            }
+        }
+    ]
+}

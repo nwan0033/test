@@ -1,0 +1,93 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 700,
+    "height": 300,
+    "title": "",
+    "data": {
+        "url": "https://raw.githubusercontent.com/nwan0033/data_vis_II/main/global-data-on-sustainable-energy.csv"
+    },
+    "transform": [
+        {
+            "filter": {
+                "field": "Entity",
+                "oneOf": [
+                    "China",
+                    "United States",
+                    "India",
+                    "Japan",
+                    "Germany",
+                    "Australia"
+                ]
+            }
+        },
+        {
+            "filter": {
+                "field": "Year",
+                "oneOf": [
+                    "2000",
+                    "2001",
+                    "2002",
+                    "2003",
+                    "2004",
+                    "2005",
+                    "2006",
+                    "2007",
+                    "2008",
+                    "2009",
+                    "2010",
+                    "2011",
+                    "2012",
+                    "2013",
+                    "2014",
+                    "2015",
+                    "2016",
+                    "2017",
+                    "2018",
+                    "2019"
+                ]
+            }
+        }
+    ],
+    "mark": "circle",
+    "encoding": {
+        "x": {
+            "field": "Year",
+            "type": "nominal",
+            "title": "Year"
+        },
+        "y": {
+            "field": "Value_co2_emissions_kt_by_country",
+            "type": "quantitative",
+            "title": "CO2 Emissions per capita"
+        },
+        "color": {
+            "field": "Entity",
+            "type": "nominal"
+        },
+        "size": {
+            "field": "Density(P/Km2)",
+            "type": "quantitative"
+        },
+        "tooltip": [
+            {
+                "field": "Entity",
+                "type": "nominal",
+                "title": "Country"
+            },
+            {
+                "field": "Year",
+                "type": "nominal"
+            },
+            {
+                "field": "Value_co2_emissions_kt_by_country",
+                "type": "quantitative",
+                "title": "CO2 Emissions per capita"
+            },
+            {
+                "field": "Density(P/Km2)",
+                "type": "nominal",
+                "title": "Population Density (P/Km2)"
+            }
+        ]
+    }
+}

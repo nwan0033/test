@@ -1,0 +1,69 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+
+    "title": {"text": "Mean Renewable Electricity Generating Capacity"},
+
+    "data": {
+
+        "url": "https://raw.githubusercontent.com/nwan0033/data_vis_II/main/global-data-on-sustainable-energy.csv"
+    },
+
+    "transform": [
+        {
+            "filter": {
+                "field": "Entity",
+                "oneOf": [
+                    "Argentina",
+                    "Armenia",
+                    "Aruba",
+                    "Azerbaijan",
+                    "Belize",
+                    "Bhutan",
+                    "Brazil",
+                    "Chile",
+                    "China",
+                    "Colombia",
+                    "Costa Rica",
+                    "French Guiana",
+                    "Georgia",
+                    "Kyrgyzstan",
+                    "Malaysia",
+                    "New Caledonia",
+                    "Panama",
+                    "Paraguay",
+                    "Suriname",
+                    "Tajikistan",
+                    "Thailand",
+                    "Turkey",
+                    "Uruguay"
+                ]
+            } 
+        },
+
+        {
+            "aggregate": [{
+                "op": "mean",
+                "field": "Renewable-electricity-generating-capacity-per-capita",
+                "as": "Mean Renewable Electricity Generating Capacity"
+            }],
+            "groupby": ["Entity"]
+        }
+    ],
+
+    "encoding": {
+        "x": {"field": "Entity", "type": "nominal", "title": "Country", "sort": { "encoding": "y", "order": "descending" }},
+        "y": {"field": "Mean Renewable Electricity Generating Capacity", "type": "quantitative"}
+    },
+
+    "layer": [
+        {
+        "mark": "bar",
+        "encoding": {
+            "tooltip": [
+                {"field": "Mean Renewable Electricity Generating Capacity", "type": "quantitative", "format": ".2f"},
+                {"field": "Entity", "type": "nominal", "title": "Country"}
+            ]
+        }
+    }
+]
+}
